@@ -180,7 +180,6 @@ export class SessionComponent implements OnInit{
         this.canPauseActualTime = true;
       }else{
         this.stopSession();
-        alert("Session finished !");
       }
     }
     this.pauseTotalSeconds--;
