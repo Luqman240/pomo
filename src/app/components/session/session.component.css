@@ -1,0 +1,74 @@
+#session-wrapper{
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#remaining-loop{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(69, 119, 110);
+}
+
+#session-goal{
+    font-size: 2rem;
+    color: rgb(120, 223, 204);
+}
+
+.timeText {
+    font-size: 4rem;
+    color: #00dfb6b8;
+    overflow: visible;
+    white-space: nowrap;
+    width: 150px; /* Adjust the width according to your design */
+    text-align: center; /* Optional: Center the text within the fixed width */
+    margin-right: 150px;
+    animation: 0.5s ease-out 0s 1 chrono;
+}
+
+#tasks-list-container{
+    width: fit-content;
+}
+
+#tasks-list-header{
+    display: flex;
+    align-items: center;
+
+    *{
+        margin-right: 1.5rem;
+    }
+}
+
+.bar {
+    margin: 2rem 0rem;
+    background-color: #00dfb6b8; /* Green background color */
+    height: 1rem; /* Set your desired height */
+    text-align: center;
+    line-height: 1rem; /* Center the text vertically */
+    transition: all 0.1s ease 0s;
+}
+
+#session-actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap : 1rem;
+}
+
+@keyframes chrono {
+    0%{
+        opacity: 0; 
+        transform: translateY(1.2rem);
+    }   
+    100%{
+        opacity: 1; 
+        transform: translateY(0px);
+    }
+}

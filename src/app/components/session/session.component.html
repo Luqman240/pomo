@@ -1,0 +1,22 @@
+<div id="session-wrapper">
+    <span id="remaining-loop">Loop left : {{remainingLoop}}</span>
+    <div class="container">
+        <h2 id="session-goal">{{(session$ | async)!.goal}}</h2>
+        <h1 class="timeText" *ngIf="!boolTimer">{{workTimer!}}</h1>
+        <h1 class="timeText" *ngIf="boolTimer">{{pauseTimer!}}</h1>
+        <div id="session-actions">
+            <button class="icon-button" *ngIf="(remainingLoop > 0)" (click)="manageTimer()" [ngStyle]="{'background-image': canPauseActualTime ? 'url(\'/assets/icons/pause_icon.svg\')' : 'url(\'/assets/icons/play_icon.svg\')', 'background-repeat': 'no-repeat'}"></button>
+            <button class="icon-button" *ngIf="(remainingLoop <= 0)" (click)="backToSetup()" [ngStyle]="{'background-image': 'url(\'/assets/icons/back_icon.svg\')', 'background-repeat': 'no-repeat'}"></button>
+            <button class="icon-button" *ngIf="(remainingLoop <= 0)" (click)="boot()" [ngStyle]="{'background-image': 'url(\'/assets/icons/restart_icon.svg\')', 'background-repeat': 'no-repeat'}"></button>
+        </div>
+    </div>
+    
+    <!--<div class="bar" [style.width.%]="scaleBar()"></div>-->
+    
+    <div id="tasks-list-container">
+        <div id="tasks-list-header">
+            <h3>Task list</h3>
+        </div>
+        <app-tasks></app-tasks>
+    </div>
+</div>

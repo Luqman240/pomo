@@ -1,0 +1,16 @@
+<div id="task-input-group">
+  <input id="task-goal" type="text" value="-- New Task -- "/>
+  <button class="icon-button" [ngStyle]="{'background-image': 'url(\'/assets/icons/add_icon.svg\')', 'background-repeat': 'no-repeat'}" (click)="addTask()"></button>
+</div>
+<div class="task-list-wrapper">
+  <div class="task" *ngFor="let task of (tasks$ | async)">
+    <div class="task-title">
+      <span>{{task.title}}</span>
+    </div>
+    <span class="task-actions">
+      <button class="delete-button" (click)="deleteTask(task.id)">
+        <img src="../../../assets/icons/delete_icon.svg" alt="delete" style="width:1.4rem"/>
+      </button>
+    </span>
+  </div>
+</div>
